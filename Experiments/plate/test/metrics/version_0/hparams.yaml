@@ -1,0 +1,40 @@
+checkpoint:
+  filename: model
+  mode: min
+  monitor: loss/val
+data_path: /Users/evakhromeeva/Desktop/Sechenov/Be.ai/segmentation-boilerplate/data
+dataloader:
+  batch_size: 30
+  num_workers: 8
+exp_name: test
+exp_path: Experiments
+img_size: 256
+loss:
+  ignore_index: -1
+  loss_type: Tversky
+model:
+  encoder_depth: 5
+  encoder_name: resnet50
+  in_channels: 3
+  model_type: unetplusplus
+  num_classes: 11
+model_exp_path: /Users/evakhromeeva/Desktop/Sechenov/Be.ai/segmentation-boilerplate/Experiments/plate/test/onnx_model.onnx
+optimizer: adam
+optimizer_params:
+  lr: 0.0005
+  weight_decay: 0.0001
+project: plate
+save_path: Experiments/plate/test
+scheduler: cosine
+scheduler_params:
+  warmup_epochs: 2
+trainer:
+  accelerator: gpu
+  devices:
+  - 0
+  gradient_clip_val: 1.0
+  max_epochs: 10
+  precision: 16
+  sync_batchnorm: true
+transforms:
+  aug_prob: 1.0

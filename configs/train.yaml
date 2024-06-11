@@ -1,0 +1,50 @@
+# main paths
+data_path: "/Users/evakhromeeva/Desktop/Sechenov/Be.ai/segmentation-boilerplate/data"
+exp_path: "Experiments"
+model_exp_path: "/Users/evakhromeeva/Desktop/Sechenov/Be.ai/segmentation-boilerplate/Experiments/plate/test/onnx_model.onnx"
+
+# exp params
+exp_name: test
+project: plate
+
+trainer:
+  devices: [0]
+  accelerator: gpu
+  precision: 16
+  max_epochs: 10
+  sync_batchnorm: True
+  gradient_clip_val: 1.0
+
+loss:
+  loss_type: Tversky
+  ignore_index: -1
+
+model:
+  model_type: unetplusplus #deeplabv3plus
+  encoder_name: resnet50 # densenet161 #se_resnet101
+  in_channels: 3
+  num_classes: 11
+  encoder_depth: 5
+
+img_size: 256
+
+dataloader:
+  batch_size: 30
+  num_workers: 8
+
+transforms:
+  aug_prob: 1.0
+
+optimizer: adam
+optimizer_params:
+  lr: 0.0005
+  weight_decay: 0.0001
+
+scheduler: cosine
+scheduler_params:
+  warmup_epochs: 2
+
+checkpoint:
+  monitor: loss/val
+  filename: model
+  mode: min
