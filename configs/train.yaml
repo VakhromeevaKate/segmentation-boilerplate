@@ -1,7 +1,7 @@
 # main paths
-data_path: "/Users/evakhromeeva/Desktop/Sechenov/Be.ai/segmentation-boilerplate/data"
+data_path: "/Users/evakhromeeva/Projects/segmentation-boilerplate/data"
 exp_path: "Experiments"
-model_exp_path: "/Users/evakhromeeva/Desktop/Sechenov/Be.ai/segmentation-boilerplate/Experiments/plate/test/onnx_model.onnx"
+model_exp_path: "/Users/evakhromeeva/Projects/segmentation-boilerplate/Experiments/plate/test/onnx_model.onnx"
 
 # exp params
 exp_name: test

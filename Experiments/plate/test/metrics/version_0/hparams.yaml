@@ -2,7 +2,7 @@ checkpoint:
   filename: model
   mode: min
   monitor: loss/val
-data_path: /Users/evakhromeeva/Desktop/Sechenov/Be.ai/segmentation-boilerplate/data
+data_path: /Users/evakhromeeva/Projects/segmentation-boilerplate/data
 dataloader:
   batch_size: 30
   num_workers: 8
@@ -18,7 +18,7 @@ model:
   in_channels: 3
   model_type: unetplusplus
   num_classes: 11
-model_exp_path: /Users/evakhromeeva/Desktop/Sechenov/Be.ai/segmentation-boilerplate/Experiments/plate/test/onnx_model.onnx
+model_exp_path: /Users/evakhromeeva/Projects/segmentation-boilerplate/Experiments/plate/test/onnx_model.onnx
 optimizer: adam
 optimizer_params:
   lr: 0.0005
