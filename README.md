@@ -1,5 +1,8 @@
 # segmentation_train_template
 
-root file: train.py
+First:
+install libs
+pip3 install torch pytorch_lightning loguru tensorboard
 
-pip3 install torch pytorch_lightning os yaml shutil loguru tensorboard
+Then:
+start train.py from root

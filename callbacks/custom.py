@@ -6,7 +6,7 @@ import os
 
 class SaveOnnxCallback(Callback):
     def on_train_end(self, trainer: Trainer, pl_module: LightningModule) -> None:
-        device = "cuda"
+        device = "cpu"
         test_image = torch.randn(
             1,
             3,
