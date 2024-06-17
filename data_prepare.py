@@ -1,6 +1,5 @@
 import pandas as pd
 import os
-import re
 
 img_path = 'data/food/img'
 file_img_path = 'food/img'
