@@ -1,0 +1,1 @@
+tensorboard --logdir Experiments/plate/test/metrics/version_0/

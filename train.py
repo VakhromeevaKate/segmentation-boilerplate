@@ -16,7 +16,8 @@ from loguru import logger
 from callbacks.custom import SaveOnnxCallback
 
 
-torch.cuda.empty_cache()
+# torch.cuda.empty_cache()
+torch.set_default_device("mps")
 
 
 def load_config(config_path):
