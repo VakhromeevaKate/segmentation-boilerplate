@@ -6,6 +6,7 @@ data_path: /Users/evakhromeeva/Projects/segmentation-boilerplate/data
 dataloader:
   batch_size: 30
   num_workers: 8
+default_device: cpu
 exp_name: test
 exp_path: Experiments
 img_size: 256
@@ -14,10 +15,10 @@ loss:
   loss_type: Tversky
 model:
   encoder_depth: 5
-  encoder_name: resnet50
+  encoder_name: timm-mobilenetv3_small_100
   in_channels: 3
-  model_type: unetplusplus
-  num_classes: 11
+  model_type: deeplabv3plus
+  num_classes: 10
 model_exp_path: /Users/evakhromeeva/Projects/segmentation-boilerplate/Experiments/plate/test/onnx_model.onnx
 optimizer: adam
 optimizer_params:

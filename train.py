@@ -16,16 +16,12 @@ from loguru import logger
 from callbacks.custom import SaveOnnxCallback
 
 
-# torch.cuda.empty_cache()
-torch.set_default_device("mps")
-
 
 def load_config(config_path):
     with open(config_path, "r") as input_file:
         config = yaml.safe_load(input_file)
 
     return config
-
 
 @rank_zero_only
 def check_dir(dirname):
@@ -55,6 +51,13 @@ def train(args=None):
     config["save_path"] = os.path.join(
         config["exp_path"], config["project"], config["exp_name"]
     )
+
+    default_device = config["default_device"]
+
+    if default_device == "cuda":
+        torch.cuda.empty_cache()
+
+    torch.set_default_device(default_device)
 
     check_dir(config["save_path"])
     os.makedirs(config["save_path"], exist_ok=True)

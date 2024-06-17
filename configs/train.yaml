@@ -7,6 +7,9 @@ model_exp_path: "/Users/evakhromeeva/Projects/segmentation-boilerplate/Experimen
 exp_name: test
 project: plate
 
+# defaults
+default_device: cpu
+
 trainer:
   devices: [0]
   accelerator: gpu
@@ -20,10 +23,10 @@ loss:
   ignore_index: -1
 
 model:
-  model_type: unetplusplus #deeplabv3plus
-  encoder_name: resnet50 # densenet161 #se_resnet101
+  model_type: deeplabv3plus #deeplabv3plus
+  encoder_name: timm-mobilenetv3_small_100 # densenet161 #se_resnet101 #mobilenet_v2
   in_channels: 3
-  num_classes: 11
+  num_classes: 10
   encoder_depth: 5
 
 img_size: 256

@@ -6,14 +6,14 @@ import os
 
 class SaveOnnxCallback(Callback):
     def on_train_end(self, trainer: Trainer, pl_module: LightningModule) -> None:
-        device = "mps"
+        # device = pl_module.config["default_device"],
         test_image = torch.randn(
             1,
             3,
             pl_module.config["img_size"],
             pl_module.config["img_size"],
             requires_grad=False,
-        ).to(device)
+        ).to("mps")
         torch.onnx.export(
             pl_module.model,
             test_image,
