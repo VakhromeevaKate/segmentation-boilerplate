@@ -24,7 +24,7 @@ loss:
 
 model:
   model_type: deeplabv3plus #deeplabv3plus
-  encoder_name: timm-mobilenetv3_small_100 # densenet161 #se_resnet101 #mobilenet_v2
+  encoder_name: timm-mobilenetv3_large_100 #timm-mobilenetv3_small_100 # densenet161 #se_resnet101 #mobilenet_v2
   in_channels: 3
   num_classes: 10
   encoder_depth: 5

@@ -15,7 +15,7 @@ loss:
   loss_type: Tversky
 model:
   encoder_depth: 5
-  encoder_name: timm-mobilenetv3_small_100
+  encoder_name: timm-mobilenetv3_large_100
   in_channels: 3
   model_type: deeplabv3plus
   num_classes: 10
