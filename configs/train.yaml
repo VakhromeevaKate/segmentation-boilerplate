@@ -19,7 +19,7 @@ trainer:
   gradient_clip_val: 1.0
 
 loss:
-  loss_type: Tversky
+  loss_type: Dice #Tversky
   ignore_index: -1
 
 model:

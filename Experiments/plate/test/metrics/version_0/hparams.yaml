@@ -12,7 +12,7 @@ exp_path: Experiments
 img_size: 256
 loss:
   ignore_index: -1
-  loss_type: Tversky
+  loss_type: Dice
 model:
   encoder_depth: 5
   encoder_name: timm-mobilenetv3_small_100
