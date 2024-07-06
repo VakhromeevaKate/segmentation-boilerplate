@@ -21,8 +21,8 @@ for i, img in enumerate(fds, start=0):
 d = {"image": imageList, "mask": maskList}
 df = pd.DataFrame(d)
 
-df1 = df.iloc [:200]
-df2 = df.iloc [200:]
+df1 = df.iloc[:80]
+df2 = df.iloc[80:]
 
-df1.to_csv('data/train.csv', index= False)
-df2.to_csv('data/test.csv', index= False)
+df1.to_csv('data/train.csv', index=False)
+df2.to_csv('data/test.csv', index=False)

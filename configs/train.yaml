@@ -14,7 +14,7 @@ trainer:
   devices: [0]
   accelerator: gpu
   precision: 16
-  max_epochs: 10
+  max_epochs: 40
   sync_batchnorm: True
   gradient_clip_val: 1.0
 
